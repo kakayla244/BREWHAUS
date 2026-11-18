@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | BREWHAUS</title>
+    <style>
+       :root {
+    --cream: #F8F5EF;
+    --brown: #79563C;
+    --dark: #29251F;
+    --light: #E9DFD2;
+    --gray: #858078;
+    --white: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button, input, textarea, select {
+    font-family: inherit;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+header {
+    padding: 23px 8%;
+    background: var(--cream);
+    border-bottom: 1px solid #EAE5DC;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--brown);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+}
+
+.nav-links a {
+    font-size: 13px;
+    color: #625D56;
+    transition: .3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--brown);
+}
+
+.nav-button {
+    background: var(--dark);
+    color: white;
+    padding: 13px 23px;
+    font-size: 12px;
+    transition: .3s;
+    white-space: nowrap;
+}
+
+.nav-button:hover {
+    background: var(--brown);
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.primary-button {
+    display: inline-block;
+    background: var(--brown);
+    color: white;
+    padding: 16px 25px;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.primary-button:hover {
+    background: var(--dark);
+}
+
+.secondary-button {
+    display: inline-block;
+    border-bottom: 1px solid var(--dark);
+    padding-bottom: 5px;
+    font-size: 13px;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.subtitle {
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    color: var(--brown);
+    margin-bottom: 23px;
+}
+
+.highlight {
+    color: var(--brown);
+}
+
+.page-heading {
+    text-align: center;
+    padding: 90px 20px 65px;
+}
+
+.page-heading h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 5vw, 58px);
+    margin-bottom: 15px;
+}
+
+.page-heading p:last-child {
+    color: var(--gray);
+    font-size: 14px;
+    line-height: 1.8;
+}
+    .about-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 75px;
+    align-items: center;
+    padding: 100px 8%;
+}
+
+.about-image {
+    height: 430px;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-content h2 {
+    line-height: 1.3;
+    margin-bottom: 23px;
+}
+
+.about-content > p:not(.subtitle) {
+    color: var(--gray);
+    font-size: 14px;
+    line-height: 2;
+    margin-bottom: 28px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-section {
+    padding: 20px 8% 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.contact-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.contact-info > p {
+    color: var(--gray);
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 30px;
+}
+
+.contact-item {
+    border-bottom: 1px solid #DED7CD;
+    padding: 20px 0;
+}
+
+.contact-item h3 {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.contact-item p {
+    color: var(--gray);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.contact-form {
+    background: #EFE9DF;
+    padding: 35px;
+}
+
+.contact-form h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 9px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    border: 1px solid #D8D0C5;
+    background: var(--cream);
+    padding: 14px;
+    outline: none;
+    font-size: 13px;
+    color: var(--dark);
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--brown);
+}
+
+.contact-form .primary-button {
+    width: 100%;
+}
+@media (max-width: 850px) {
+    header {
+        padding: 20px 5%;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .nav-button {
+        padding: 11px 13px;
+        font-size: 10px;
+    }
+
+    .hero,
+    .about-section {
+        gap: 35px;
+    }
+
+    .hero-image {
+        height: 380px;
+    }
+
+    .contact-section {
+        grid-template-columns: 1fr;
+    }
+
+
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 18px 5%;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        gap: 8px;
+        padding-top: 15px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .nav-button {
+        font-size: 10px;
+        padding: 10px 12px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 50px 5%;
+    }
+
+    .hero h1 {
+        font-size: 53px;
+    }
+
+    .hero-image {
+        height: 330px;
+    }
+
+    .image-label {
+        left: -5px;
+    }
+
+    .hero-info {
+        gap: 35px;
+        margin-top: 40px;
+    }
+
+    .menu-section {
+        padding: 65px 5%;
+    }
+
+    .section-heading {
+        align-items: start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-card img {
+        height: 260px;
+    }
+
+    .about-section {
+        grid-template-columns: 1fr;
+        padding: 65px 5%;
+    }
+
+    .about-image {
+        height: 300px;
+    }
+
+    .contact-section,
+    .order-section {
+        padding: 15px 5% 70px;
+    }
+
+    .contact-form {
+        padding: 22px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-right {
+        text-align: left;
+    }
+
+    footer {
+        padding: 45px 5% 20px;
+    }
+}
+    </style>
+</head>
+<body>
+
+<header>
+   <nav class="navbar">
+    <a href="index.html" class="logo">
+        BREW<span>HAUS.</span>
+    </a>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Our Menu</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+</header>
+
+<main>
+    <section class="page-heading">
+        <p class="subtitle">— GET TO KNOW US</p>
+        <h1>Our <span class="highlight">Story.</span></h1>
+        <p>A little story behind every cup we serve.</p>
+    </section>
+
+    <section class="about-section">
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=900" alt="Brewhaus coffee shop">
+        </div>
+
+        <div class="about-content">
+            <p class="subtitle">— OUR BEGINNING</p>
+            <h2>Creating Moments, <span class="highlight">One Cup at a Time.</span></h2>
+
+            <p>
+                BREWHAUS was created from a simple idea:
+                coffee should be more than just a drink.
+                It should be an experience that makes
+                ordinary moments feel special.
+            </p>
+
+            <p>
+                We bring together carefully selected beans,
+                thoughtful brewing, and a welcoming atmosphere
+                to make every visit memorable.
+            </p>
+
+        </div>
+    </section>
+
+    <section class="menu-section">
+        <div class="section-heading">
+            <div>
+                <p class="subtitle">— WHAT WE BELIEVE</p>
+                <h2>Our <span class="highlight">Values.</span></h2>
+            </div>
+        </div>
+
+        <div class="menu-grid">
+
+            <div class="menu-card">
+                <div style="padding:25px 12px;">
+                    <p class="subtitle">01 — QUALITY</p>
+                    <h3>Quality First.</h3>
+                    <p style="color:#858078; line-height:1.8; font-size:13px; margin-top:12px;">
+                        We care about every detail, from coffee beans to the final cup.
+                    </p>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div style="padding:25px 12px;">
+                    <p class="subtitle">02 — EXPERIENCE</p>
+                    <h3>Made With Care.</h3>
+                    <p style="color:#858078; line-height:1.8; font-size:13px; margin-top:12px;">
+                        Every drink is prepared with attention and passion.
+                    </p>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div style="padding:25px 12px;">
+                    <p class="subtitle">03 — COMMUNITY</p>
+                    <h3>Feel At Home.</h3>
+                    <p style="color:#858078; line-height:1.8; font-size:13px; margin-top:12px;">
+                        We want everyone to feel welcome in every visit.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div>
+            <div class="logo">BREW<span>HAUS.</span></div>
+            <p>Making every coffee moment special.</p>
+        </div>
+        <div class="footer-right">
+            <p>Have a question?</p>
+            <a href="contact.html">Contact Us ↗</a>
+        </div>
+    </div>
+    <div class="copyright">
+        © 2026 BREWHAUS. All rights reserved.
+    </div>
+</footer>
+
+</body>
+</html>
